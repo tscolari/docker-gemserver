@@ -1,7 +1,6 @@
 FROM stackbrew/ubuntu:trusty
 MAINTAINER Tiago Scolari <tscolari@gmail.com>
 
-ENV PORT 3000
 ENV USERNAME foo
 ENV PASSWORD bar
 
@@ -16,8 +15,6 @@ RUN gem install bundler
 
 RUN mkdir /var/gems
 RUN mkdir /geminabox
-RUN mkdir /geminabox/log
-RUN mkdir /geminabox/pids
 
 VOLUME /var/gems
 
@@ -29,4 +26,5 @@ RUN bundle install
 ADD config.ru ./geminabox/
 ADD unicorn.rb ./geminabox/
 
-CMD ["bundle", "exec", "unicorn"]
+ENV PORT 6444
+CMD ["bundle", "exec", "unicorn", "-c", "/geminabox/unicorn.rb"]
