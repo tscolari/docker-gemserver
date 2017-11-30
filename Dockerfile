@@ -1,12 +1,12 @@
-FROM stackbrew/ubuntu:trusty
+FROM stackbrew/ubuntu:xenial
 MAINTAINER Tiago Scolari <tscolari@gmail.com>
 
-RUN sudo apt-get update;
-RUN sudo apt-get install software-properties-common -y;
-RUN sudo add-apt-repository ppa:brightbox/ruby-ng &&\
-    sudo apt-get update;
-RUN sudo apt-get install ruby2.4 ruby2.4-dev make -y &&\
-    sudo apt-get clean -y && apt-get autoclean -y;
+RUN apt-get update;
+RUN apt-get install software-properties-common -y;
+RUN add-apt-repository ppa:brightbox/ruby-ng &&\
+    apt-get update;
+RUN apt-get install ruby2.4 ruby2.4-dev make -y &&\
+    apt-get clean -y && apt-get autoclean -y;
 
 RUN gem install bundler
 
