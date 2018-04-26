@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'sinatra'
 gem 'geminabox'
+gem 'rack-health'
+gem 'sinatra'
 gem 'unicorn'

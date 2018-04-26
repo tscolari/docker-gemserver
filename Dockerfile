@@ -1,4 +1,4 @@
-FROM stackbrew/ubuntu:xenial
+FROM stackbrew/ubuntu:trusty
 MAINTAINER Tiago Scolari <tscolari@gmail.com>
 
 RUN apt-get update;

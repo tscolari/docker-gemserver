@@ -17,6 +17,8 @@ GEM
     mustermann (1.0.1)
     nesty (1.0.2)
     rack (2.0.3)
+    rack-health (0.1.2)
+      rack (>= 1.2.0)
     rack-protection (2.0.0)
       rack
     raindrops (0.19.0)
@@ -36,8 +38,9 @@ PLATFORMS
 
 DEPENDENCIES
   geminabox
+  rack-health
   sinatra
   unicorn
 
 BUNDLED WITH
-   1.13.6
+   1.16.1
