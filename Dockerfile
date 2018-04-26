@@ -1,14 +1,19 @@
-FROM stackbrew/ubuntu:trusty
+FROM alpine
 MAINTAINER Tiago Scolari <tscolari@gmail.com>
 
-RUN apt-get update;
-RUN apt-get install software-properties-common -y;
-RUN add-apt-repository ppa:brightbox/ruby-ng &&\
-    apt-get update;
-RUN apt-get install ruby2.4 ruby2.4-dev make -y &&\
-    apt-get clean -y && apt-get autoclean -y;
-
-RUN gem install bundler
+RUN apk update &&\
+    apk add ruby \
+           ruby-bundler \
+           linux-headers \
+           ca-certificates &&\
+    apk add --virtual build-dependencies \
+           build-base \
+           ruby-dev \
+           libressl-dev &&\
+    rm -rf /usr/lib/ruby/gems/*/cache/* \
+           /var/cache/apk/* \
+           /tmp/* \
+           /var/tmp/*
 
 RUN mkdir /var/gems
 RUN mkdir /geminabox

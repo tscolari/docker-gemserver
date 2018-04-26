@@ -12,6 +12,7 @@ GEM
       reentrant_flock
       sinatra (>= 1.2.7)
     httpclient (2.8.3)
+    json (2.1.0)
     kgio (2.11.2)
     multipart-post (2.0.0)
     mustermann (1.0.2)
@@ -38,6 +39,7 @@ PLATFORMS
 
 DEPENDENCIES
   geminabox
+  json
   rack-health
   sinatra
   unicorn
